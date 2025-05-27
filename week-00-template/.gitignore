@@ -1,0 +1,59 @@
+# ----------------------------
+# ✅ Node & Package Caches
+# ----------------------------
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+.npm/
+
+# ----------------------------
+# ✅ Build Output
+# ----------------------------
+dist/
+dist-ssr/
+*.local
+*.tsbuildinfo
+
+# ----------------------------
+# ✅ Logs
+# ----------------------------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ----------------------------
+# ✅ Editor Configs
+# ----------------------------
+.vscode/
+!.vscode/extensions.json
+.idea/
+.DS_Store
+
+# Visual Studio
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ----------------------------
+# ✅ Environment / Secrets
+# ----------------------------
+.env
+.env.*.local
+
+# ----------------------------
+# ✅ ESLint & Prettier
+# ----------------------------
+.eslintcache
+
+# ----------------------------
+# ✅ Optional: System / macOS Trash
+# ----------------------------
+*.orig
+.Trashes
