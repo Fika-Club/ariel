@@ -78,15 +78,7 @@ Stepper.Answer = () => {
 };
 
 Stepper.Result = () => {
-    const { answer, setAnswer, isCorrect, question, setQuestion } = useContext(StepperContext);
-    const handleClickNext = () => {
-        if (question === 3) {
-            setQuestion(1);
-        } else {
-            setQuestion(question + 1);
-        }
-        setAnswer(undefined);
-    };
+    const { answer, isCorrect, question } = useContext(StepperContext);
     if (answer === undefined) return null;
     const image = () => {
         if (!isCorrect) return <img src={Wrong} alt="cat" />;
@@ -96,12 +88,26 @@ Stepper.Result = () => {
         <div className="flex flex-col items-center gap-4">
             <p className="text-lg font-bold">{isCorrect ? 'Correct!!' : 'Wrong!!'}</p>
             {image()}
-            <button
-                className="bg-gray-500 text-white px-4 py-2 rounded-md cursor-pointer"
-                onClick={handleClickNext}
-            >
-                {question === 3 ? 'Finish' : 'Next'}
-            </button>
         </div>
+    );
+};
+
+Stepper.Navigation = () => {
+    const { question, setQuestion, answer, setAnswer } = useContext(StepperContext);
+    if (answer === undefined) return null;
+    const handleClickNext = () => {
+        if (question === 3) {
+            setQuestion(1);
+        } else {
+            setQuestion(question + 1);
+        }
+        setAnswer(undefined);
+    };
+    return (
+        <button className="bg-gray-500 text-white px-4 py-2 rounded-md cursor-pointer"
+                onClick={handleClickNext}
+        >
+            {question === 3 ? 'Finish' : 'Next'}
+        </button>
     );
 };
