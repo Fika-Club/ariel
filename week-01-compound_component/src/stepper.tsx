@@ -1,8 +1,8 @@
 import { createContext, useContext, useState } from 'react';
-import Q1 from '../assets/Q1.JPG';
-import Q2 from '../assets/Q2.jpg';
-import Q3 from '../assets/Q3.jpg';
-import Wrong from '../assets/wrong.jpg';
+import Q1 from '../../assets/Q1.jpg';
+import Q2 from '../../assets/Q2.jpg';
+import Q3 from '../../assets/Q3.jpg';
+import Wrong from '../../assets/wrong.jpg';
 
 type StepperContextType = {
     question: number;
