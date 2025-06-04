@@ -14,7 +14,10 @@ const App = () => {
                     <span>가을이는 귀엽다.</span>
                 </Stepper.Question>
                 <Stepper.Answer />
-                <Stepper.Result />
+                <div className="flex flex-col items-center gap-4">
+                    <Stepper.Result />
+                    <Stepper.Navigation />
+                </div>
             </Stepper>
         </div>
     );

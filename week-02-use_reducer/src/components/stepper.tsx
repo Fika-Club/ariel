@@ -63,17 +63,28 @@ Stepper.Answer = () => {
 Stepper.Result = () => {
     const { state, dispatch } = useContext(StepperContext)!;
     if (state.answer === undefined) return null;
+    const image = () => {
+        if (!state.isCorrect) return <img src={Wrong} alt="cat" />;
+        return <img src={correctImages[state.question]} alt="cat" />;
+    };
 
     return (
         <div className="flex flex-col items-center gap-4">
             <p className="text-lg font-bold">{state.isCorrect ? 'Correct!!' : 'Wrong!!'}</p>
-            <img src={state.isCorrect ? correctImages[state.question] : Wrong} alt="cat" />
-            <button
-                className="bg-gray-500 text-white px-4 py-2 rounded-md cursor-pointer"
-                onClick={() => dispatch({ type: 'NEXT' })}
-            >
-                {state.question === 3 ? 'Finish' : 'Next'}
-            </button>
+            {image()}
         </div>
+    );
+};
+
+Stepper.Navigation = () => {
+    const { state, dispatch } = useContext(StepperContext)!;
+    if (state.answer === undefined) return null;
+    return (
+        <button
+            className="bg-gray-500 text-white px-4 py-2 rounded-md cursor-pointer"
+            onClick={() => dispatch({ type: 'NEXT' })}
+        >
+            {state.question === 3 ? 'Finish' : 'Next'}
+        </button>
     );
 };

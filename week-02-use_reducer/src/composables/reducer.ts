@@ -16,8 +16,6 @@ export const reducer = (state: State, action: Action): State => {
             const nextQuestion = state.question === 3 ? 1 : state.question + 1;
             return { question: nextQuestion, answer: undefined, isCorrect: false };
         }
-        case 'RESET':
-            return { question: 1, answer: undefined, isCorrect: false };
         default:
             return state;
     }
