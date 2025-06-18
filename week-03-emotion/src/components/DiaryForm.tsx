@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { useEmotion } from '../context/EmotionContext';
 import { useDiary } from '../context/DiaryContext';

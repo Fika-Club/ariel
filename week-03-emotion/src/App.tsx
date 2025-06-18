@@ -1,5 +1,3 @@
-/** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { EmotionProvider } from './context/EmotionContext';
 import { DiaryProvider } from './context/DiaryContext';
@@ -15,18 +13,13 @@ const Container = styled.div`
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background: white;
 `;
+const BackgroundContainer = styled.div`
+    transition: background-color 0.3s ease;
+    min-height: 100vh;
+`;
 
 const Background = ({ children }: { children: React.ReactNode }) => {
-    return (
-        <div
-            css={css`
-                transition: background-color 0.3s ease;
-                min-height: 100vh;
-            `}
-        >
-            {children}
-        </div>
-    );
+    return <BackgroundContainer>{children}</BackgroundContainer>;
 };
 
 const AppContent = () => (
